@@ -3,21 +3,27 @@
 
   <item>
     <name>Realforce 23u Hack</name>
-    <appendix>Force turn NumLock on at Realforce 23u.</appendix>
-    <identifier>private.realforce_23u</identifier>
+    <item>
+      <name>Force turn NumLock</name>
+      <identifier>private.realforce_23u</identifier>
 
-    <autogen>
-      __ForceNumLockOn__
-      DeviceVendor::RawValue::0x04fe, <!-- Please replace DeviceVendor value for your device. -->
-      DeviceProduct::RawValue::0x0203, <!-- Please replace DeviceProduct value for your device. -->
-    </autogen>
-
-    <!-- Suppress KeyCode::KEYPAD_CLEAR -->
-    <autogen>
-      __KeyToKey__
-      KeyCode::KEYPAD_CLEAR,
-      KeyCode::VK_NONE,
-    </autogen>
+      <autogen>
+        __ForceNumLockOn__
+        DeviceVendor::RawValue::0x0853, <!-- Please replace DeviceVendor value for your device. -->
+        DeviceProduct::RawValue::0x0117, <!-- Please replace DeviceProduct value for your device. -->
+      </autogen>
+    </item>
+    <item>
+      <name>Control_L to Command_L</name>
+      <appendix>to use cut, copy, paste key</appendix>
+      <identifier>private.realforce_23u_copy</identifier>
+      <device_only>DeviceVendor::RawValue::0x0853, DeviceProduct::RawValue::0x0117</device_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::CONTROL_L,
+        KeyCode::COMMAND_L
+      </autogen>
+    </item>
   </item>
 
 </root>
